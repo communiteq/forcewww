@@ -1,1 +1,39 @@
-Forcewww
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ForceWWW Redirection Service</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://rsms.me/">
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+</head>
+<body>
+  <div class="main-container">
+    <h1>ForceWWW Redirection Service</h1>
+    <div style="text-align:center;margin-bottom:2em;">
+      <a href="https://www.communiteq.com/" target="_blank">
+        <img src="https://www.communiteq.com/wp-content/themes/ctmarketing/images/communiteq_420x56.png" alt="Communiteq logo" style="max-width:300px;width:100%;height:auto;margin-bottom:0.5em;" />
+      </a>
+    </div>
+    <h2>Why you need this</h2>
+    <p>If you run <span class="code">yourdomain.com</span> then <span class="code">www.yourdomain.com</span> and <span class="code">yourdomain.com</span> are two separate websites, causing possible duplicate content issues in search engines and causing cookie security and performance issues. The best way to solve this is to redirect your domain name to <span class="code">www.yourdomain.com</span>.</p>
+    <p>Additionally, it is impossible to use a CNAME record for your 'naked' domain name so you will need to configure an A record with an IP address in your DNS.</p>
+    <p>That makes your configuration inflexible and prone to errors since you always have to make sure that the A record points to the correct IP address. If you use a CNAME for your website, you will need to update the A record immediately when the CNAME changes.</p>
+    <p>We solve both issues by offering one single place where you can point your A record to, and we will issue the redirection to <span class="code">www.yourdomain.com</span>. Our IP address will not change and you will never need to worry about that again.</p>
+    <h2>How to use this</h2>
+    <ol>
+      <li>Point the DNS <span class="code">A</span> record for your domain to <span class="code">45.55.96.103</span> and/or your <span class="code">AAAA</span> record to <span class="code">2604:a880:800:10::195a:1001</span>.</li>
+      <li>We receive the request for <span class="code">yourdomain.com</span> and forward it to <span class="code">www.yourdomain.com</span>, which should point to your own server like usual.</li>
+    </ol>
+    <h2>How we do this</h2>
+    <p>It's a pretty simple nginx configuration that just issues a 301 redirect if we do not see the hostname starting with <span class="code">www</span>.</p>
+    <p>What makes this service more special is that we support the <span class="code">https://</span> protocol by auto-provisioning a LetsEncrypt certificate on the fly.</p>
+    <h2>Why we do this</h2>
+    <p>We needed a generic service like this for our hosting company <a href="https://www.communiteq.com/" target="_blank">Communiteq</a> and we decided to make this a public service so anyone can enjoy it - free and forever.</p>
+    <footer>
+      &copy; 2016-2025 Communiteq. All rights reserved.
+    </footer>
+  </div>
+</body>
+</html>
